@@ -78,11 +78,18 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-button1{
+
+@media (max-width: 768px) {
+  .divider-custom-line {
+      display: none;
+  }
+}
+button1 {
+  font-size:small;
   background-color: #2196f3;
   color: white;
   text-decoration: none;
-  border: 2px solid #2196f3;
+  border: 2px solid #0d3556;
   font-weight: bold;
   padding: 13px 30px;
   border-radius: 30px;
@@ -4096,7 +4103,7 @@ textarea.form-control-lg {
   font-size: 1.25rem;
   line-height: 1;
   background-color: transparent;
-  border: 0.125rem solid transparent;
+  border: 0.125rem solid var(--bs-blue);
   border-radius: 0.5rem;
   transition: box-shadow 0.15s ease-in-out;
 }
@@ -11342,6 +11349,30 @@ html {
 .divider-custom.divider-light .divider-custom-line {
   background-color: black;
 }
+
+.divider-custom .divider-custom-line1 {
+  width: 100%;
+  max-width: 7rem;
+  height: 0.25rem;
+  background-color: #2c3e5000;
+  border-radius: 1rem;
+  border-color: #2c3e50;
+}
+.divider-custom .divider-custom-line1:first-child {
+  margin-right: 1rem;
+}
+.divider-custom .divider-custom-line1:last-child {
+  margin-left: 1rem;
+}
+.divider-custom .divider-custom-icon {
+  color: #502c2c00;
+  font-size: 2rem;
+}
+.divider-custom.divider-light .divider-custom-line1 {
+  background-color: black;
+}
+
+
 .divider-custom.divider-light .divider-custom-icon {
   color: black;
 }
@@ -11352,10 +11383,10 @@ html {
 }
 
 .btn-social {
-  border-radius: 100%;
+  border-radius: 40%;
   display: inline-flex;
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 3.00rem;
+  height: 3.00rem;
   font-size: 1.25rem;
   justify-content: center;
   align-items: center;
@@ -11383,7 +11414,7 @@ html {
   color: #fff;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
-  color: #1abc9c;
+  color: #2196f3;
 }
 #mainNav .navbar-toggler {
   font-size: 80%;

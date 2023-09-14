@@ -24,10 +24,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                        <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li> -->
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Experience</a></li>
+                      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
+                      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Experience</a></li>                      
                     </ul>
                 </div>
             </div>
@@ -66,7 +65,7 @@
             
         </header>
         <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
+        <section class="page-section portfolio fade-in" id="portfolio">
             <div class="container">
                 <!-- Portfolio Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-primary mb-0">Portfolio</h2>
@@ -136,7 +135,7 @@
             </div>
         </section>
         <!-- About Section-->
-        <section class="page-section bg-primary  mb-0" id="about">
+        <section class="page-section bg-primary  mb-0 fade-in" id="about">
             <div class="container">
                 <!-- About Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase" style="color: #2196f3;">About Me</h2>
@@ -236,7 +235,7 @@
         </section>
 
 
-        <section class="page-section" id="contact">
+        <section class="page-section fade-in" id="contact">
         <div class="container">
             <h2 class="page-section-heading text-center text-uppercase text-primary mb-0">Experience</h2>
             <div class="divider-custom">
@@ -653,6 +652,32 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
+
+<script>
+// Function to handle the intersection of elements
+function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target); // Unobserve after fading in
+        }
+    });
+}
+
+// Set up the IntersectionObserver
+const options = {
+    threshold: 0.2, // Adjust this value as needed
+};
+
+const observer = new IntersectionObserver(handleIntersection, options);
+
+// Find elements with the "fade-in" class and observe them
+const fadeElements = document.querySelectorAll(".fade-in");
+fadeElements.forEach((element) => {
+    observer.observe(element);
+});
+
+</script>
 
 
 
